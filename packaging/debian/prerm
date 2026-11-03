@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# 卸载前归还 Wi-Fi
+if [ "$1" = remove ]; then
+  systemctl stop owlyd.service 2>/dev/null || true
+fi
+
+exit 0

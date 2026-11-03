@@ -1,0 +1,8 @@
+{
+  "uuid": "owly-airdrop@hyper-jiawei.github.com",
+  "name": "Owly AirDrop 快速开关",
+  "description": "在 GNOME 快速设置面板添加 AirDrop 接收开关：开启后自动接收 iPhone 文件（默认自动接受，保存到下载文件夹），副标题实时显示就绪状态。需要已安装 owly-airdrop-ubuntu 软件包。",
+  "shell-version": ["46"],
+  "version": 1,
+  "url": "https://github.com/Hyper-jiawei/owly-airdrop-ubuntu"
+}

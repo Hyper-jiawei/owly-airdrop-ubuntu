@@ -1,0 +1,15 @@
+# packaging/package.sh and packaging/arch/aur-test.sh, run from here.
+/*.pkg.tar.*
+/*.deb
+/*.rpm
+# packaging/package.sh tar, for omdrop-owl-bin.
+/omdrop-owl-*.tar.gz
+__pycache__
+
+/owly-test-*
+other-libs
+
+# Cargo build output.
+/target/
+
+.readme-preview.html

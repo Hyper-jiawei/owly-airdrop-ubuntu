@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Owly AirDrop
+Name[zh_CN]=Owly AirDrop
+Comment=Send and receive AirDrop files between iPhone and Ubuntu
+Comment[zh_CN]=在 iPhone 与 Ubuntu 之间收发 AirDrop 文件
+Exec=owly-gui
+Icon=owly-airdrop
+Terminal=false
+Categories=Network;FileTransfer;Utility;
+Keywords=airdrop;owly;receive;send;iphone;ubuntu;

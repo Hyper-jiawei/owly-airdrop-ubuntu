@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = configure ]; then
+  if [ -d /run/systemd/system ]; then
+    systemctl daemon-reload || true
+  fi
+  # NetworkManager 只在启动或 reload 时读取 conf.d
+  if systemctl is-active --quiet NetworkManager 2>/dev/null; then
+    nmcli general reload conf >/dev/null 2>&1 \
+      || echo "  Could not reload NetworkManager's configuration. Run: sudo nmcli general reload conf"
+  fi
+  gtk-update-icon-cache -f -t /usr/share/icons/hicolor >/dev/null 2>&1 || true
+  update-desktop-database /usr/share/applications >/dev/null 2>&1 || true
+  if [ -z "$2" ]; then
+    cat <<'MSG'
+  Owly AirDrop 已安装：
+  - 应用菜单搜索「Owly AirDrop」打开图形界面（设置目录 / 收发文件）；
+  - 快速设置开关：gnome-extensions enable owly-airdrop@hyper-jiawei.github.com
+    然后注销重登（或 Alt+F2 输入 r 回车重启 Shell），面板底部出现「AirDrop 接收」。
+MSG
+  elif [ "$(busctl get-property io.github.t4t5.Owly /io/github/t4t5/Owly \
+      io.github.t4t5.Owly.Radio1 State 2>/dev/null)" = 's "idle"' ]; then
+    systemctl try-restart owlyd.service || true
+  fi
+fi
+
+exit 0

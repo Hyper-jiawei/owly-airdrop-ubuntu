@@ -1,0 +1,9 @@
+# Owly: allow current user to toggle pmset disablesleep without password.
+# Installed by scripts/install.sh into /etc/sudoers.d/owly
+# Removed by scripts/uninstall.sh.
+#
+# This grants ONLY the two exact pmset invocations needed by the menu bar app.
+# It does NOT grant any other root capability.
+
+__USER__ ALL=(root) NOPASSWD: /usr/bin/pmset -a disablesleep 0
+__USER__ ALL=(root) NOPASSWD: /usr/bin/pmset -a disablesleep 1

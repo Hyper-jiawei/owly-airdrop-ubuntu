@@ -1,0 +1,23 @@
+Package: owly-airdrop-ubuntu
+Version: 0.1.0
+Section: net
+Priority: optional
+Architecture: amd64
+Maintainer: Hyper-jiawei <https://github.com/Hyper-jiawei>
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 4.2), dbus, systemd, polkitd, network-manager, iproute2, iputils-ping, mount, python3, python3-gi, gir1.2-gtk-3.0
+Recommends: gnome-shell (>= 46)
+Provides: owly
+Conflicts: owly
+Replaces: owly
+Homepage: https://github.com/Hyper-jiawei/owly-airdrop-ubuntu
+Description: AirDrop between iPhone and Ubuntu, with component-based desktop UI
+ Owly (t4t5/owly) lets Linux use Apple's AirDrop protocol. This package
+ bundles the original owly 0.4.2 radio daemon and CLI together with a
+ component-based Ubuntu desktop integration:
+  - GTK3 graphical app for receiving (auto-accept) and sending files
+  - GNOME Shell quick-settings toggle with live readiness status
+  - Headless controller (owly-ctl) for the toggle
+  - Custom AirDrop icons, desktop launcher, Chinese documentation
+ .
+ The original owly source code is included in the source repository for
+ secondary development. Licensed under MIT (T4T5 and contributors).
